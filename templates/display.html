@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expenses</title>
+</head>
+<body>
+    <h2>Monthly Expenses</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>For What</th>
+            <th>How Much</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for item in records %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.for_what }}</td>
+            <td>{{ item.how_much }}</td>
+            <td>
+                <a href="{% url 'update' item.id %}">Edit</a>
+            </td>
+            <td>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Total Amount: ₹{{ total }}</h3>
+    <button><a href="{% url 'add' %}">Add New Entry</a></button>
+</body>
+</html>
