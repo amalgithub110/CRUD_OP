@@ -39,3 +39,6 @@ def delete(request, pk):
         return HttpResponse("Record not found")
     qs.delete()
     return redirect('display')
+
+def sample(request):
+    return HttpResponse('hii i am sample to check diff in git')
