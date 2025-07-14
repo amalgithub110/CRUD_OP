@@ -21,7 +21,7 @@ from add_money import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add/', views.add, name='add'),
-    path('display/', views.display, name='display'),
+    path('', views.display, name='display'),
     path('update/<int:pk>/', views.update, name='update'),
     path('delete/<int:pk>/', views.delete, name='delete'),
     path('sample/', views.sample, name='sample')
